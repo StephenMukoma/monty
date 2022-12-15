@@ -10,7 +10,7 @@ int check_line(char **cmd)
 {
 	int i = 0;
 	char *array[] = {"push", "pall", "pint", "pop", "swap", "add","sub", "div", "mod",
-			"pchar", "pstr", NULL};
+			"pchar", "pstr", "rotl", NULL};
 
 	while(array[i] != NULL)
 	{
