@@ -11,7 +11,7 @@ void exec_cmd(char **command, unsigned int line_number, stack_t **head)
 	int i = 0;
 	instruction_t selector[] = {
 		{"push", push}, {"pall", pall}, {"pint", pint}, {"pop", pop},
-		{"swap", swap}, {"add", add}
+		{"swap", swap}, {"add", add},{"sub", sub}
 		};
 	if (str_cmp(command[0], "push") == 0)
 	{
