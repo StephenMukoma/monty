@@ -63,3 +63,27 @@ void pint(stack_t **stack, unsigned int line_number)
 		exit(EXIT_FAILURE);
 	}
 }
+/**
+*pop - remove top element
+*
+*@stack: pointer to list
+*@line_number: line being executed
+*/
+void pop(stack_t **stack, unsigned int line_number)
+{
+	stack_t *curr = *stack;
+
+	if (!curr)
+	{
+		fprintf(stderr, "L%u: can't pop an empty\n", line_number);
+		clear(stack);
+		exit(EXIT_FAILURE);
+	}
+	else
+	{
+		*stack = curr->next;
+		if (*stack)
+			(*stack)->prev = NULL;
+	}
+	free(curr);
+}

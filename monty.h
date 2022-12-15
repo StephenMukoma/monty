@@ -47,6 +47,8 @@ extern glob_t global;
 void push(stack_t **stack, unsigned int line_number);
 void pall(stack_t **stack, unsigned int line_number);
 void pint(stack_t **stack, unsigned int line_number);
+void pop(stack_t **stack, unsigned int line_number);
+
 
 int str_cmp(char *str1, char *str2);
 int len(char **c);
