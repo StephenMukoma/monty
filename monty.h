@@ -49,7 +49,7 @@ void pall(stack_t **stack, unsigned int line_number);
 void pint(stack_t **stack, unsigned int line_number);
 void pop(stack_t **stack, unsigned int line_number);
 void swap(stack_t **stack, unsigned int line_number);
-
+void add(stack_t **stack, unsigned int line_number);
 
 int str_cmp(char *str1, char *str2);
 int len(char **c);
