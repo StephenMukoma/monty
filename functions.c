@@ -87,3 +87,39 @@ void pop(stack_t **stack, unsigned int line_number)
 	}
 	free(curr);
 }
+#include "monty.h"
+/**
+*swap - swaps top 2 elements
+*
+*@stack:pointer to list
+*@line_number: line being executed
+*/
+void swap(stack_t **stack, unsigned int line_number)
+{
+	int counter = 0, temp;
+	stack_t *curr = *stack;
+
+	if (curr)
+	{
+		while (curr)
+		{
+			curr = curr->next;
+			counter++;
+		}
+		if (counter < 2)
+		{
+			fprintf(stderr, "L%u: can't swap, stack too short\n", line_number);
+			clear(stack);
+			exit(EXIT_FAILURE);
+		}
+		temp = (*stack)->n;
+		(*stack)->n = (*stack)->next->n;
+		(*stack)->next->n = temp;
+	}
+	else
+	{
+		fprintf(stderr, "L%u: can't swap, stack too short\n", line_number);
+		clear(stack);
+		exit(EXIT_FAILURE);
+	}
+}
