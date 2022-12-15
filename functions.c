@@ -46,4 +46,20 @@ void pall(stack_t **stack, unsigned int line_number)
 		current = current->next;
 	}
 }
-
+/**
+*pint - prints top element on stack
+*
+*@stack: pointer to list
+*@line_number: line being executed
+*/
+void pint(stack_t **stack, unsigned int line_number)
+{
+	if (*stack)
+		printf("%d\n", (*stack)->n);
+	else
+	{
+		fprintf(stderr, "L%u: can't pint, stack empty\n", line_number);
+		clear(stack);
+		exit(EXIT_FAILURE);
+	}
+}
